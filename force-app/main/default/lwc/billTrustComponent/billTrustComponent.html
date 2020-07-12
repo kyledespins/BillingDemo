@@ -1,0 +1,15 @@
+<template>
+    <lightning-record-edit-form object-api-name="Trust_Line_Item__c" 
+                                onsuccess={handleSuccess} 
+                                onsubmit ={handleSubmit}>
+        <lightning-messages>
+        </lightning-messages>
+        <div class="slds-form_horizontal slds-form slds-grid slds-wrap">
+            <lightning-input-field field-name='Billable_Rate__c'></lightning-input-field>
+            <lightning-input-field field-name='Hours_Billed__c'></lightning-input-field>
+            <lightning-input-field field-name='Processing_Date_Time__c'></lightning-input-field>
+            <lightning-button class="slds-m-top_small" type="submit" label="Bill Trust">
+            </lightning-button>
+        </div>
+    </lightning-record-edit-form>
+</template>
