@@ -1,6 +1,7 @@
 import { LightningElement, api, wire, track } from 'lwc';
 import { CurrentPageReference} from 'lightning/navigation';
 import { fireEvent } from 'c/pubsub';
+import sendBillingEmail from '@salesforce/apex/BillingController.SendBillingEmail';
 
 export default class BillTrustComponent extends LightningElement {
     @api recordId;
@@ -21,6 +22,13 @@ export default class BillTrustComponent extends LightningElement {
         this.isDeposit = false;
         this.titleType = 'Create Bill';
         fireEvent(this.pageRef, 'billCreateSuccess', event.target.value);
+        sendBillingEmail({TrustId: this.recordId})
+            .then(result => {
+                console.log("Email Success");
+            })
+            .catch(error => {
+                console.log(error); //TODO: Display the fact we did not send the email to the user
+            });
     }
 
     handleSubmit(event) {
