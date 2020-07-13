@@ -12,8 +12,17 @@ import {
 
 const columns = [
     { label: 'Item Number', fieldName: 'name', type: 'text' },
-    { label: 'Amount', fieldName: 'amount', type: 'currency' },
-    { label: 'Processing Date/Time', fieldName: 'processingDateTime', type: 'date' }
+    { label: 'Amount', fieldName: 'amount', type: 'currency', 
+        cellAttributes: {class: { fieldName: 'cssClass' } }},
+    { label: 'Description', fieldName: 'description', type: 'text' },
+    { label: 'Processing Date/Time', fieldName: 'processingDateTime', type: 'date',
+        typeAttributes:{
+            month: "2-digit",
+            day: "2-digit",
+            year: "numeric",
+            hour: "2-digit",
+            minute: "2-digit"
+        }}
 ];
 
 export default class TrustLineItemSummaryComponent extends LightningElement {
@@ -33,7 +42,6 @@ export default class TrustLineItemSummaryComponent extends LightningElement {
         unregisterAllListeners(this);
     }
     handleNotification(){
-        console.log("CAPTURE EVENT");
         refreshApex(this.clientDataToRefresh)
     };
     
@@ -47,14 +55,19 @@ export default class TrustLineItemSummaryComponent extends LightningElement {
                 let row = {};
                 row.name = element.Name;
                 row.amount = element.Amount__c;
+                if(element.Amount__c > 0){
+                    row.cssClass = 'slds-text-color_success';
+                }
+                else{
+                    row.cssClass = 'slds-text-color_error';
+                }
+                row.description = element.Description__c;
                 row.processingDateTime = element.Processing_Date_Time__c;
                 
                 tempArray.push(row);
             });
             this.tableData = tempArray;
         }
-        console.log('debug');
-        console.log(this.tableData);
     }
 
 }

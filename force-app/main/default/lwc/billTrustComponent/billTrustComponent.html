@@ -1,15 +1,24 @@
 <template>
-    <lightning-record-edit-form object-api-name="Trust_Line_Item__c" 
-                                onsuccess={handleSuccess} 
-                                onsubmit ={handleSubmit}>
-        <lightning-messages>
-        </lightning-messages>
-        <div class="slds-form_horizontal slds-form slds-grid slds-wrap">
-            <lightning-input-field field-name='Billable_Rate__c'></lightning-input-field>
-            <lightning-input-field field-name='Hours_Billed__c'></lightning-input-field>
-            <lightning-input-field field-name='Processing_Date_Time__c'></lightning-input-field>
-            <lightning-button class="slds-m-top_small" type="submit" label="Bill Trust">
-            </lightning-button>
-        </div>
-    </lightning-record-edit-form>
+    <lightning-card  title={titleType} icon-name="standard:partner_marketing_budget">
+        <lightning-record-edit-form object-api-name="Trust_Line_Item__c" 
+                                    onsuccess={handleSuccess} 
+                                    onsubmit ={handleSubmit}>
+            <lightning-messages>
+            </lightning-messages>
+            <lightning-input-field required field-name='Type__c' onchange={typeChange}></lightning-input-field>
+            <div class="slds-form_horizontal slds-form slds-grid slds-wrap">
+                <template if:false={isDeposit}>
+                    <lightning-input-field field-name='Billable_Rate__c'></lightning-input-field>
+                    <lightning-input-field field-name='Hours_Billed__c'></lightning-input-field>
+                </template>
+                <template if:true={isDeposit}>
+                    <lightning-input-field field-name='Deposit__c'></lightning-input-field>
+                </template>
+                <lightning-input-field field-name='Description__c'></lightning-input-field>
+                <lightning-input-field field-name='Processing_Date_Time__c'></lightning-input-field>
+                <lightning-button class="slds-m-top_small" type="submit" label={titleType}>
+                </lightning-button>
+            </div>
+        </lightning-record-edit-form>
+    </lightning-card>
 </template>

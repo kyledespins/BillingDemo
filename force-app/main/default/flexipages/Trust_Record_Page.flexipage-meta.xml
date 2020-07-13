@@ -33,10 +33,17 @@
         <name>main</name>
         <type>Region</type>
     </flexiPageRegions>
+    <flexiPageRegions>
+        <componentInstances>
+            <componentName>billTrustComponent</componentName>
+        </componentInstances>
+        <name>sidebar</name>
+        <type>Region</type>
+    </flexiPageRegions>
     <masterLabel>Trust Record Page</masterLabel>
     <sobjectType>Trust__c</sobjectType>
     <template>
-        <name>flexipage:recordHomeSingleColTemplateDesktop</name>
+        <name>flexipage:recordHomeTemplateDesktop</name>
     </template>
     <type>RecordPage</type>
 </FlexiPage>
