@@ -49,6 +49,10 @@
                 <behavior>Edit</behavior>
                 <field>Account_Email__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Total_Amount_Held_In_Escrow__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
@@ -258,6 +262,7 @@
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>
+        <fields>Total_Amount_In_Escrow__c</fields>
         <relatedList>Trust__c.Trusts_Account__c</relatedList>
     </relatedLists>
     <relatedObjects>ParentId</relatedObjects>

@@ -16,6 +16,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Account.Total_Amount_Held_In_Escrow__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Trust_Line_Item__c.Amount__c</field>
         <readable>true</readable>
     </fieldPermissions>

@@ -25,9 +25,6 @@
     </flexiPageRegions>
     <flexiPageRegions>
         <componentInstances>
-            <componentName>force:detailPanel</componentName>
-        </componentInstances>
-        <componentInstances>
             <componentName>trustLineItemSummaryComponent</componentName>
         </componentInstances>
         <name>main</name>

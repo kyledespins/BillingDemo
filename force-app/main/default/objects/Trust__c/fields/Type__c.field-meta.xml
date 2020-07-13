@@ -16,8 +16,19 @@
                 <label>Retainer</label>
             </value>
             <value>
+                <fullName>Buyer Desposit</fullName>
+                <default>false</default>
+                <label>Buyer Desposit</label>
+            </value>
+            <value>
+                <fullName>Escrow Holdback</fullName>
+                <default>false</default>
+                <label>Escrow Holdback</label>
+            </value>
+            <value>
                 <fullName>Real Estate</fullName>
                 <default>false</default>
+                <isActive>false</isActive>
                 <label>Real Estate</label>
             </value>
         </valueSetDefinition>
