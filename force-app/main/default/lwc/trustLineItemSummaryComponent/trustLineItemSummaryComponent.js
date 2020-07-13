@@ -11,7 +11,9 @@ import {
 } from 'c/pubsub';
 
 const columns = [
-    { label: 'Item Number', fieldName: 'name', type: 'text' },
+    { label: 'Item Number', fieldName: 'nameURL', type: 'url',
+            typeAttributes: {label: { fieldName: 'name' },  }
+        },
     { label: 'Amount', fieldName: 'amount', type: 'currency', 
         cellAttributes: {class: { fieldName: 'cssClass' } }},
     { label: 'Description', fieldName: 'description', type: 'text' },
@@ -53,6 +55,7 @@ export default class TrustLineItemSummaryComponent extends LightningElement {
             let tempArray = []
             data.forEach(element => {
                 let row = {};
+                row.nameURL = `/${element.Id}`;
                 row.name = element.Name;
                 row.amount = element.Amount__c;
                 if(element.Amount__c > 0){
