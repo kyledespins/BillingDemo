@@ -1,6 +1,6 @@
 # Use Cases
 
-## A way for attorney to add a trust account 
+## A way for attorneys to add a trust account 
 
 This is done by adding a new Trust from the Account related list. Due to the fact that this is done less often for a specific account the default New Record page is used. 
 
