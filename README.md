@@ -33,3 +33,7 @@ On creation of a bill we send an email to the account. If that fails we will wan
 ## Actual Bill Generation and email templating 
 
 Current proof of concept uses a very brief email with minimal information. Future state could use document generation and a more robust email template. 
+
+## Trust Line Item message on no read access 
+
+Replace empty datatable for a user that does not have read access to Trust_Line_Item with message stating as such.
